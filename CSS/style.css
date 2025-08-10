@@ -1,0 +1,77 @@
+/* Fuente base */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffeb99, #ffe4b3);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Logo */
+header img {
+    width: 150px;
+    margin-top: 20px;
+}
+
+/* Contenedor principal */
+.conversor {
+    background: white;
+    max-width: 350px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /*Sombreado leve*/
+    border: 3px solid #ffcc00; /* para poner unaa pequeña linea amarilla */
+}
+
+/* Título */
+.conversor h2 {
+    color: #cc6600;
+    margin-bottom: 15px;
+}
+
+/* Input y select */
+input, select {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px; /*Bordeado leve hacerlo cirular*/
+    border: 2px solid #ffcc00;
+    font-size: 1em;
+    outline: none;
+}
+
+input:focus, select:focus { /*Selector de las etiquetas input y select el focus es cuando esta en el objetivo asi sea con tab*/
+    border-color: #e6b800;
+    box-shadow: 0 0 5px #e6b800; /*Borde como anillo*/
+}
+
+/* Botón */
+button {
+    width: 95%;
+    background: #ff9900;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer; /*Importante para que el mouse se vuelva un puntero o manito*/
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #cc7a00; /*Hoover de toda la vida*/
+}
+
+/* Resultado */
+#result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+    background: #fff7cc;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #ffcc00;
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversor</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <img src="Pictures/Logo One piece.png" alt="Logo sombrero de paja">
+    </header>
+    <div class="conversor">
+        <h2>Seleccione el valor a convertir</h2>
+        <input type="number" id="amount" placeholder="Cantidad" min="0"> <!---El type determina el tipo de dato que se va usar y el place holder es para que el texto se vea gris-->
+
+        <select id="currency"> <!--El select es el contenedor de las opciones-->
+            <option value="Berries">Berries → COP</option>
+            <option value="cop">COP → Berries</option>
+        </select>
+
+        <button onclick="convert()">Convertir</button>
+        <p id="result"></p>
+
+        
+
+
+    </div>
+    <script>
+        function convert() {
+            let amount = parseFloat(document.getElementById("amount").value);
+            let currency = document.getElementById("currency").value;
+            let result = document.getElementById("result");
+
+            // Tasa ficticia de cambio
+            // Ejemplo: 1 Berrie = 150 COP (esto es inventado)
+            let berriesToCop = 150;
+            let copToBerries = 1 / berriesToCop;
+
+            // Validar cantidad
+            if (isNaN(amount) || amount <= 0) {
+                result.textContent = "Por favor, ingresa una cantidad válida.";
+                return;
+            }
+
+            // Conversión según opción
+            if (currency === "berries") {
+                result.textContent = `${amount} Berries = ${(amount * berriesToCop).toFixed(2)} COP`;
+            } else {
+                result.textContent = `${amount} COP = ${(amount * copToBerries).toFixed(2)} Berries`;
+            }
+        }
+    </script>
+</body>
+</html>
